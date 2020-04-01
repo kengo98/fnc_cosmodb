@@ -16,6 +16,7 @@ namespace fnc_cosmosdb
         [FunctionName(nameof(ProductInsert))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous,  "post", Route = null)] HttpRequest req,
+            [CosmosDB()],
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
